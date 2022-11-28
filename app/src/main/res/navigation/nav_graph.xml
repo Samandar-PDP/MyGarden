@@ -8,20 +8,12 @@
         android:id="@+id/myGardenFragment"
         android:name="com.example.sharedelement.fragment.MyGardenFragment"
         android:label="fragment_my_garden"
-        tools:layout="@layout/fragment_my_garden" >
-        <action
-            android:id="@+id/action_myGardenFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_my_garden"/>
     <fragment
         android:id="@+id/plantListFragment"
         android:name="com.example.sharedelement.fragment.PlantListFragment"
         android:label="fragment_plant_list"
-        tools:layout="@layout/fragment_plant_list" >
-        <action
-            android:id="@+id/action_plantListFragment_to_detailFragment"
-            app:destination="@id/detailFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_plant_list"/>
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.example.sharedelement.fragment.DetailFragment"
@@ -31,5 +23,13 @@
         android:id="@+id/mainFragment"
         android:name="com.example.sharedelement.fragment.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"/>
+    </fragment>
 </navigation>

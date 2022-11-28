@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
 import com.example.sharedelement.R
 import com.example.sharedelement.adapter.PlantAdapter
 import com.example.sharedelement.databinding.FragmentMyGardenBinding
@@ -25,6 +27,10 @@ class MyGardenFragment : Fragment(R.layout.fragment_my_garden) {
         val plantAdapter = PlantAdapter()
         binding.rv.adapter = plantAdapter
         plantAdapter.submitList(Constants.plantList())
+        plantAdapter.onClick = {
+            val bundle = bundleOf("plant" to it)
+            findNavController().navigate(R.id.action_mainFragment_to_detailFragment, bundle)
+        }
     }
 
     override fun onDestroyView() {
