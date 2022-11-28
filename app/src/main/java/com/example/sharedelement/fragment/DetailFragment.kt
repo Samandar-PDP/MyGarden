@@ -28,7 +28,6 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         initViews()
     }
 
-
     private fun initViews() {
         plant?.let { p ->
             binding.imageView.setImageResource(p.icon)
